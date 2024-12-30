@@ -1,3 +1,4 @@
+  import CurrentWeather from "@/components/CurrentWeather"
   import WeatherSkeleton from "@/components/LoadingSkeleton"
   import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
   import { Button } from "@/components/ui/button"
@@ -94,6 +95,19 @@
         </div>
 
         {/* Current and Hourly Weather */}
+        <div className="">
+          {/* current weather */}
+          <CurrentWeather data={weatherQuery.data} locationName={locationname} />
+          {/* hourly temperature */}
+          <div>
+
+          </div>
+          {/* details */}
+          {/* forecast */}
+          <div>
+
+          </div>
+        </div>
       </div>
     )
   }
