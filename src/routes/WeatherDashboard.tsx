@@ -1,7 +1,10 @@
-  import CurrentWeather from "@/components/CurrentWeather"
+  import { CurrentWeather } from "@/components/CurrentWeather"
+  import { HourlyTemperature } from "@/components/HourlyTemperature"
   import WeatherSkeleton from "@/components/LoadingSkeleton"
   import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
   import { Button } from "@/components/ui/button"
+import { WeatherDetails } from "@/components/WeatherDetails"
+import { WeatherForecast } from "@/components/WeatherForecast"
   import { useGeoLocation } from "@/hooks/UseGeoLocation"
   import { useForecastQuery, useReverseQuery, useWeatherQuery } from "@/hooks/UseWeather"
   import { AlertTriangle, MapPin, RefreshCw } from "lucide-react"
@@ -95,18 +98,19 @@
         </div>
 
         {/* Current and Hourly Weather */}
-        <div className="">
-          {/* current weather */}
-          <CurrentWeather data={weatherQuery.data} locationName={locationname} />
-          {/* hourly temperature */}
-          <div>
-
+        <div className="grid gap-6">
+          <div className="flex flex-col lg:flex-row gap-4">
+            {/* current weather */}
+            <CurrentWeather data={weatherQuery.data} locationName={locationname} />
+            {/* hourly temperature */}
+              <HourlyTemperature data={forecastQuery.data} />
           </div>
-          {/* details */}
-          {/* forecast */}
-          <div>
-
+          
+          <div className="grid gap-6 md:grid-cols-2 items-start">
+            <WeatherDetails data={weatherQuery.data} />
+            <WeatherForecast data={forecastQuery.data} />
           </div>
+          
         </div>
       </div>
     )
