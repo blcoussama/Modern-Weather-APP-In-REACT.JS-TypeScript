@@ -7,7 +7,16 @@ import CityPage from './routes/CityPage'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000, //5mins
+      gcTime: 10 * 60 * 1000, //10mins
+      retry: false,
+      refetchOnWindowFocus: false
+    }
+  }
+})
 
 function App() {
 
