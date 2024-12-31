@@ -52,7 +52,7 @@ export function WeatherForecast({ data }: WeatherForecastProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>5-Day Forecast</CardTitle>
+        <CardTitle className="text-2xl">Next Five Days Forecast</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="grid gap-4">
@@ -65,12 +65,12 @@ export function WeatherForecast({ data }: WeatherForecastProps) {
                 <p className="font-medium">
                   {format(new Date(day.date * 1000), "EEE, MMM d")}
                 </p>
-                <p className="text-sm text-muted-foreground capitalize">
+                <p className="text-base text-muted-foreground capitalize">
                   {day.weather.description}
                 </p>
               </div>
 
-              <div className="flex justify-center gap-4">
+              <div className="flex flex-col-reverse lg:flex justify-center gap-4">
                 <span className="flex items-center text-blue-500">
                   <ArrowDown className="mr-1 h-4 w-4" />
                   {formatTemp(day.temp_min)}
@@ -81,7 +81,7 @@ export function WeatherForecast({ data }: WeatherForecastProps) {
                 </span>
               </div>
 
-              <div className="flex justify-end gap-4">
+              <div className="flex flex-col lg:flex justify-end gap-4">
                 <span className="flex items-center gap-1">
                   <Droplets className="h-4 w-4 text-blue-500" />
                   <span className="text-sm">{day.humidity}%</span>

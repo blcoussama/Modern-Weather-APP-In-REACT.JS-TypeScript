@@ -34,7 +34,7 @@ export function HourlyTemperature({ data }: HourlyTemperatureProps) {
   return (
     <Card className="flex-1">
       <CardHeader>
-        <CardTitle>Today's Temperature</CardTitle>
+        <CardTitle className="text-2xl">Today's Temperature</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="h-[200px] w-full">

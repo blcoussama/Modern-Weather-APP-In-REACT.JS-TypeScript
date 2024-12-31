@@ -5,11 +5,11 @@ const AppLayout = ({ children }: PropsWithChildren) => {
   return (
     <div className='bg-gradient-to-bl from-background to-muted'>
         <Header/>
-        <main className='min-h-screen container mx-auto px-4 py-8'>
+        <main className='flex items-center justify-center min-h-screen px-12 py-8 mx-auto'>
             {children}
         </main>  
         <footer className='border-t backdrop-blur py-12 supports-[backdrop-filter]:bg-background/60'>
-            <div className='container mx-auto px-4 text-center text-white'>
+            <div className='mx-auto px-4 text-center text-white'>
                 <p>Weather App Made By Belcadi Oussama</p>
             </div>
         </footer>
