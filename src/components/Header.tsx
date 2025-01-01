@@ -1,6 +1,7 @@
 import { useTheme } from "@/context/ThemeProvider"
 import { Moon, Sun } from "lucide-react"
 import { Link } from "react-router-dom"
+import CitySearch from "./CitySearch"
 
 const Header = () => {
 
@@ -9,17 +10,18 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full py-4 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">   
-        <div className="mx-auto flex h-16 items-center justify-between px-10 sm:px-16 md:px-14 lg:px-16 ">
+        <div className="mx-auto flex h-16 items-center justify-between px-8 sm:px-16 md:px-14 lg:px-16 ">
             <Link to={"/"} className="flex items-center justify-center">
                 <img src="react.svg" className="logo" alt="logo" />
-                <div className="flex flex-col items-start ml-4">
-                    <span className="text-base sm:text-xl font-bold">WEATHER APP</span>
+                <div className="flex flex-col items-start ml-2">
+                    <span className="text-base sm:text-lg font-bold">WEATHER APP</span>
                     <span className="text-sm sm:text-base">By Belcadi Oussama</span>
                 </div>
             </Link>
 
-            <div>
+            <div className="flex gap-4">
                 {/* SEARCH */}
+                <CitySearch />
                 {/* THEME TOGGLE */}
                 <div onClick={() => setTheme(isDark ? "light" : "dark")}
                     className={`

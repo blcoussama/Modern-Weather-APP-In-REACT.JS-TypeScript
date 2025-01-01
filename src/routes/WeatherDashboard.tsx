@@ -69,10 +69,10 @@
 
     if(weatherQuery.error || forecastQuery.error) {
       return (
-      <Alert className="bg-blue-300" variant="destructive">
-          <AlertTriangle className="h-5 w-5 bg-orange-400" />
+      <Alert variant="destructive">
+          <AlertTriangle className="h-5 w-5" />
           <AlertTitle className="text-xl">Error</AlertTitle>
-          <AlertDescription className="bg-green-600flex flex-col gap-4 text-base sm:text-lg">
+          <AlertDescription className="flex flex-col gap-4 text-base sm:text-lg">
             <p>Failed to fetch weather data pls try again!</p>
             <Button variant="outline" onClick={handleRefresh} className="w-fit text-lg">
               <RefreshCw className="h-8 w-8" />
@@ -98,14 +98,14 @@
         </div>
         {/* Current and Hourly Weather */}
         <div className="grid gap-6">
-          <div className="flex flex-col lg:flex-row gap-4">
+          <div className="flex flex-col xl:flex-row gap-4">
             {/* current weather */}
             <CurrentWeather data={weatherQuery.data} locationName={locationname} />
             {/* hourly temperature */}
               <HourlyTemperature data={forecastQuery.data} />
           </div>
           
-          <div className="grid gap-6 md:grid-cols-2 items-start">
+          <div className="grid gap-6 xl:grid-cols-2 items-start">
             <WeatherDetails data={weatherQuery.data} />
             <WeatherForecast data={forecastQuery.data} />
           </div>
