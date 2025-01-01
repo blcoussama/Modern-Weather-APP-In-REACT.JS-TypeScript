@@ -3,7 +3,7 @@ import './App.css'
 import AppLayout from './components/AppLayout'
 import { ThemeProvider } from './context/ThemeProvider'
 import WeatherDashboard from './routes/WeatherDashboard'
-import CityPage from './routes/CityPage'
+import { CityPage } from './routes/CityPage'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
