@@ -1,4 +1,5 @@
   import { CurrentWeather } from "@/components/CurrentWeather"
+import { FavoriteCities } from "@/components/FavoriteCities"
   import { HourlyTemperature } from "@/components/HourlyTemperature"
   import WeatherSkeleton from "@/components/LoadingSkeleton"
   import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
@@ -88,10 +89,13 @@
     }
 
     return (
-      <div className="space-y-4 md:w-full">
+      <div className="space-y-4 w-full">
+        
         {/* Favorite Cities */}
+          <FavoriteCities />
+
         <div className="flex items-center justify-between px-4">
-          <h1 className="text-xl font-bold tracking-tight">My Location</h1>
+          <h1 className="text-xl lg:text-2xl font-bold tracking-tight">My Location</h1>
           <Button variant={"outline"} size={"icon"} onClick={handleRefresh} disabled={ weatherQuery.isFetching || forecastQuery.isFetching}>
             <RefreshCw className={`h-4 w-4 ${weatherQuery.isFetching?"animate-spin":""}`} />
           </Button>

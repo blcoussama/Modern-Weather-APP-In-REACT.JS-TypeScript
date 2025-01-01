@@ -1,11 +1,9 @@
-import { useWeatherQuery } from "@/hooks/UseWeather";
-import { useNavigate } from "react-router-dom";
-import { Button } from "./ui/button";
-import { toast } from "sonner";
-import { Loader2, X } from "lucide-react";
-import { UseFavorites } from "@/hooks/UseFavorites";
-import { ScrollArea, ScrollBar } from "./ui/scroll-area";
-
+import { useWeatherQuery } from "@/hooks/UseWeather"
+import { useNavigate } from "react-router-dom"
+import { Button } from "./ui/button"
+import { toast } from "sonner"
+import { Loader2, X } from "lucide-react"
+import { UseFavorites } from "@/hooks/UseFavorites"
 interface FavoriteCityTabletProps {
     id: string;
     name: string;
@@ -31,7 +29,7 @@ interface FavoriteCityTabletProps {
     return (
       <div
         onClick={handleClick}
-        className="relative flex min-w-[250px] cursor-pointer items-center gap-3 rounded-lg border bg-card p-4 pr-8 shadow-sm transition-all hover:shadow-md"
+        className="relative flex min-w-[270px] cursor-pointer items-center gap-3 rounded-lg border bg-card p-4 pr-8 shadow-sm transition-all hover:shadow-md"
         role="button"
         tabIndex={0}
       >
@@ -90,9 +88,10 @@ interface FavoriteCityTabletProps {
   
     return (
       <>
-        <h1 className="text-xl font-bold tracking-tight">Favorites</h1>
-        <ScrollArea className="w-full pb-4">
-          <div className="flex gap-4">
+      <div className="space-y-4">
+        <h1 className="lg:text-2xl font-bold tracking-tight ml-4">Favorites</h1>
+        <div className="w-full overflow-x-auto hide-scrollbar">
+          <div className="flex gap-4 pb-2">
             {favorites.map((city) => (
               <FavoriteCityTablet
                 key={city.id}
@@ -101,8 +100,8 @@ interface FavoriteCityTabletProps {
               />
             ))}
           </div>
-          <ScrollBar orientation="horizontal" className="mt-2" />
-        </ScrollArea>
+        </div>
+      </div>
       </>
     );
   }
